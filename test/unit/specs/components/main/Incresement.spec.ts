@@ -17,4 +17,40 @@ describe('Incresement', () => {
 
 		expect(wrapper.vm).toBeTruthy()
 	})
+
+	test('Incresement count equals 10 ?', () => {
+		const localVue = createLocalVue()
+		localVue.use(PiniaVuePlugin)
+
+		const wrapper = mount(Incresement, {
+			localVue,
+			pinia: createTestingPinia({
+				initialState: {
+					app: {
+						count: 10,
+					},
+				},
+			}),
+		})
+
+		expect(wrapper.text()).toMatch('10')
+	})
+
+	test('Incresement double count equals 20 ?', () => {
+		const localVue = createLocalVue()
+		localVue.use(PiniaVuePlugin)
+
+		const wrapper = mount(Incresement, {
+			localVue,
+			pinia: createTestingPinia({
+				initialState: {
+					app: {
+						count: 10,
+					},
+				},
+			}),
+		})
+
+		expect(wrapper.text()).toMatch('20')
+	})
 })
