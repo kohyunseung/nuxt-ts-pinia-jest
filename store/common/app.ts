@@ -3,6 +3,8 @@ import { defineStore } from 'pinia'
 // pinia state interface
 interface State {
 	count: number
+	value: String
+	type?: number
 }
 
 // 주의사항
@@ -13,6 +15,7 @@ export const useAppStore = defineStore('app', {
 	// store state
 	state: (): State => ({
 		count: 0,
+		value: '000',
 	}),
 	// store getters
 	getters: {

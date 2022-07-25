@@ -1,7 +1,7 @@
 <template>
 	<v-col class="pa-0">
 		Api Call Test
-		<v-btn rounded @click="test">Api Call</v-btn>
+		<CommonButton color="red" name="test" class="font_black" @click="test" />
 	</v-col>
 </template>
 
